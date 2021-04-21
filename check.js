@@ -17,11 +17,9 @@ var check =
 			const file = fs.readFileSync(item.path, 'utf8');
 			if (!file)
 				process.exit(1);
-
 			twigErrors = this.checkFile(item, file, this.twigRegex);
 		});
 		scssErrors = this.checkScssFiles();
-
 		if ((scssErrors && scssErrors.length) || (twigErrors && twigErrors.length))
 			process.exit(1);
 	},
@@ -33,7 +31,6 @@ var check =
 			const file = fs.readFileSync(item.path, 'utf8');
 			if (!file)
 				process.exit(1);
-
 			scssErrors = this.checkFile(item, file, this.scssRegex);
 			scssErrors.push(...this.checkNestingLevelError(item, file));
 		});
@@ -72,38 +69,34 @@ var check =
 	{
 		let m;
 		let errors = [];
-			let fileName = fileObject.name.replace(fileObject.extension,'');
-			let fileDir = fileObject.path.replace(fileObject.name, '');
-			let dirName = fileDir.replace(/[/]/g, ' ');
-			let dir = dirName.substring(dirName.length - fileName.length - 1, dirName.length-1).split(/\s+/);
-			for (let folderName of dir)
+		let fileName = fileObject.name.replace(fileObject.extension,'');
+		let fileDir = fileObject.path.replace(fileObject.name, '');
+		let dirName = fileDir.replace(/[/]/g, ' ');
+		let dir = dirName.substring(dirName.length - fileName.length - 1, dirName.length-1).split(/\s+/);
+		for (let folderName of dir)
+		{
+			if(folderName == fileName ||
+			dirName.indexOf('vendors') !== -1 ||
+			fileName.indexOf('g-') !== -1 ||
+			fileName.indexOf('_') !== -1
+			 )
+				continue;
+			else
 			{
-				if(folderName == fileName ||
-				dirName.indexOf('vendors') !== -1 ||
-				fileName.indexOf('g-') !== -1 ||
-				fileName.indexOf('_') !== -1
-				 )
-					continue;
-				else
-				{
-					errors.push(`Wrong  fileName "${fileName}" Path ${fileObject.path}`);
-				}
+				errors.push(`Wrong  fileName "${fileName}" Path ${fileObject.path}`);
 			}
-
+		}
 		while ((m = regex.exec(fileContent)) !== null)
 		{
 			if (m.index === regex.lastIndex)
 				regex.lastIndex++;
-
 			if(typeof m[1] == 'undefined')
 				continue;
-
 			errors.push( ...this.checkClassMatching(fileObject,m[1],fileContent) );
 		}
 		if(errors.length > 0)
 			for(let error of errors)
 				console.error(error);
-
 		return errors;
 	},
 
@@ -120,24 +113,14 @@ var check =
 		let vendors = dirName.indexOf('vendors');
 		classes = classes.split(/\s+/);
 		let errors = [];
-		let dependsClass = false;
 		let content = fileContent.toString().split("\n");
-		for (bascket of content)
-			{
-				if (bascket.indexOf('&') !== -1)
-				{
-					dependsClass = true;
-				}
-			}
 		for(let className of classes)
 		{
 			if(this.exceptions.indexOf(className) !== -1 ||
 				className == fileName ||
 				className.indexOf('g-') == 0 ||
 				className.indexOf('_') == 0 ||
-				vendors !== -1 ||
-				dependsClass == true
-
+				vendors !== -1
 			)
 				continue;
 			else
@@ -155,9 +138,9 @@ var check =
 		if(vendors !== -1) return;
 		else
 		{
-		let content = fileContent.toString();
-		content = content.split("\n");
-		for (bascket of content)
+			let content = fileContent.toString();
+			content = content.split("\n");
+			for (bascket of content)
 			{
 				if (bascket.indexOf('{') !== -1)
 				{
