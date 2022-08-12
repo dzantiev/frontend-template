@@ -1,8 +1,39 @@
-class O2Validator
+window.O2Validator = class O2Validator
 {
 	constructor(formInstance)
 	{
 		this.formInstance = formInstance;
+	}
+
+	static handleSubmit(event, params = {}, prevent = true, processErrors = true, callbacks = {})
+	{
+		if(prevent)
+			event.preventDefault();
+
+		const validator = new O2Validator(event.target);
+
+		for(let callback in callbacks)
+			validator.callbacks[callback] = callbacks[callback];
+
+		if(!validator.validate())
+			return false;
+
+		params.data = params.data || new FormData(event.target);
+		params.processData = params.processData || false;
+		params.contentType = params.contentType || false;
+
+		const successHandler = params.success;
+
+		params.success = msg =>
+		{
+			if(processErrors && !msg.success && msg.errors)
+				validator.setErrors(msg.errors);
+
+			if(typeof successHandler === 'function')
+				successHandler(msg, validator);
+		};
+
+		$.ajax(params);
 	}
 
 	validate()
@@ -22,7 +53,7 @@ class O2Validator
 
 			for (let callback of callbacks)
 			{
-				if(!O2Validator.callbacks[callback]($field))
+				if(!this.callbacks[callback]($field))
 				{
 					hasErrors = true;
 					$field.addClass('error');
@@ -62,7 +93,7 @@ class O2Validator
 	}
 
 
-	static callbacks =
+	callbacks =
 	{
 		/**
 		 * @return bool
