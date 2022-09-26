@@ -1,0 +1,13 @@
+<mjml>
+  <mj-body>
+    <mj-section background-color="#ef6451">
+      <mj-column>
+        <mj-navbar base-url="https://odva.pro" hamburger="hamburger" ico-color="#ffffff">
+          <mj-navbar-link href="" color="#ffffff">odva</mj-navbar-link>
+          <mj-navbar-link href="/contacts/" color="#ffffff">odva products</mj-navbar-link>
+          <mj-navbar-link href="/blog/" color="#ffffff">odva blog</mj-navbar-link>
+        </mj-navbar>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

@@ -1,0 +1,13 @@
+<mjml>
+	<mj-body>
+		<mj-section>
+			<mj-column>
+				<mj-carousel>
+					<mj-carousel-image src="https://proprikol.ru/wp-content/uploads/2020/04/krasivye-kartinki-vysokogo-razresheniya-3.jpg" />
+					<mj-carousel-image src="https://proprikol.ru/wp-content/uploads/2020/04/krasivye-kartinki-vysokogo-razresheniya-3.jpg" />
+					<mj-carousel-image src="https://proprikol.ru/wp-content/uploads/2020/04/krasivye-kartinki-vysokogo-razresheniya-3.jpg" />
+				</mj-carousel>
+			</mj-column>
+		</mj-section>
+	</mj-body>
+</mjml>
