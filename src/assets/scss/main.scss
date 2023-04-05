@@ -16,9 +16,9 @@
 @import '@b/g-radio/g-radio.scss';
 /* @import 'blocks/component/component'; */
 
+
 /* pages */
 /* @import 'index'; */
-
 
 * {
 	-webkit-box-sizing: border-box;
@@ -41,6 +41,5 @@ html
 }
 body
 {
-	background-image: url(#{$img}/logo.png);
-	background-repeat: no-repeat;
+
 }
