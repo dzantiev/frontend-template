@@ -9,14 +9,21 @@
 @import 'base/default';
 
 /* blocks */
-@import '@b/g-select/g-select.scss';
-@import '@b/g-input/g-input.scss';
-@import '@b/g-checkbox/g-checkbox.scss';
 @import '@b/g-button/g-button.scss';
+@import '@b/g-checkbox/g-checkbox.scss';
+@import '@b/g-input/g-input.scss';
+@import '@b/g-input-file/g-input-file.scss';
+@import '@b/g-pagination/g-pagination.scss';
+@import '@b/g-popup/g-popup.scss';
 @import '@b/g-radio/g-radio.scss';
+@import '@b/g-select/g-select.scss';
+@import '@b/g-spoiler/g-spoiler.scss';
+@import '@b/g-tabs/g-tabs.scss';
+@import '@b/notification/notification.scss';
 /* @import 'blocks/component/component'; */
 
 /* pages */
+@import '@p/ui-kit/ui-kit.scss';
 /* @import 'index'; */
 
 

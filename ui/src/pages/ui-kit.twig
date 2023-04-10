@@ -1,0 +1,32 @@
+{# ui-kit.twig #}
+{% extends "@layouts/layout.twig" %}
+
+{% block page %}
+	<div class="ui-kit">
+		<div class="ui-kit__sidebar">
+			<input type="text" placeholder="Поиск компонента" onkeyup="o2.uiKit.filterComponents(this)" />
+			<ul class="ui-kit__components-list _components-list"> </ul>
+		</div>
+		<div class="ui-kit__components">
+			{% include "./ui-kit/select.twig" %}
+			{% include "./ui-kit/range-slider.twig" %}
+			{% include "./ui-kit/input.twig" %}
+			{% include "./ui-kit/input-with-icon.twig" %}
+			{% include "./ui-kit/input-masked.twig" %}
+			{% include "./ui-kit/checkbox.twig" %}
+			{% include "./ui-kit/radio.twig" %}
+			{% include "./ui-kit/tabs.twig" %}
+			{% include "./ui-kit/date-picker.twig" %}
+			{% include "./ui-kit/adaptive.twig" %}
+			{% include "./ui-kit/slider.twig" %}
+			{% include "./ui-kit/button.twig" %}
+			{% include "./ui-kit/validation.twig" %}
+			{% include './ui-kit/popup.twig' %}
+			{% include './ui-kit/input-file.twig' %}
+			{% include './ui-kit/pagination.twig' %}
+			{% include './ui-kit/notifications.twig' %}
+			{% include './ui-kit/yamap.twig' %}
+			{% include './ui-kit/spoiler.twig' %}
+		</div>
+	</div>
+{% endblock %}
