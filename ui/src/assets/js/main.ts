@@ -27,6 +27,7 @@ import '@a/js/slick.min.js';
 /* ====================#1ef Blocks #1ef==================== */
 
 import '@b/g-select/g-select.js';
+import '@b/g-tabs/g-tabs.js';
 
 /* ====================#1ef Blocks #1ef==================== */
 
