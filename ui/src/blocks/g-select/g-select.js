@@ -9,11 +9,12 @@ o2.gSelect =
 	 * Открывает нужную выпадашку
 	 * @$select - jQuery объект для селекта
 	 */
-	open($select)
+	open(select)
 	{
 		this.close();
-		$select.addClass('g-select--opened');
-		let listner = o2.clickOutside($select, () => {
+		select.classList.add('g-select--opened');
+		let listner = o2.clickOutside(select, () =>
+		{
 			this.close();
 		});
 		this.outListeners.push(listner);
@@ -24,7 +25,10 @@ o2.gSelect =
 	 */
 	close()
 	{
-		$('._select').removeClass('g-select--opened');
+		const selects = document.querySelectorAll('._select');
+		for (let i = 0; i < selects.length; i++)
+			selects[i].classList.remove('g-select--opened');
+
 		for(let listner of this.outListeners)
 			document.removeEventListener('click', listner);
 		this.outListeners = [];
@@ -35,9 +39,10 @@ o2.gSelect =
 	 */
 	toggle(instance)
 	{
-		let $select = $(instance).parents('._select')
-		if (!$select.hasClass('g-select--opened'))
-			this.open($select);
+		const select = instance.closest('._select');
+
+		if (!select.classList.contains('g-select--opened'))
+			this.open(select);
 		else
 			this.close();
 	},
@@ -46,17 +51,17 @@ o2.gSelect =
 	 * устанавливаем название выбранного города
 	 * которое просто выводится
 	 */
-	setName($select,name)
+	setName(select,name)
 	{
-		$select.find('._selected-text').html(name);
+		select.querySelector('._selected-text').innerText = name;
 	},
 
 	/**
 	 * устанавливаем значение выбранного элемента которые передеаются в форму
 	 */
-	setSelectedValue($select,selectedValue)
+	setSelectedValue(select,selectedValue)
 	{
-		$select.find('._selected-value').val(selectedValue);
+		select.querySelector('._selected-value').value = selectedValue;
 	},
 
 	/**
@@ -64,15 +69,19 @@ o2.gSelect =
 	 */
 	selecttItem(instance)
 	{
-		let $select = $(instance).parents('._select');
-		$select.removeClass('error');
-		$select.find('._option').removeClass('g-select__item--active');
-		$(instance).addClass('g-select__item--active');
-		let name = $(instance).text(),
-			selectedValue = $(instance).data('value');
+		const select = instance.closest('._select');
+		select.classList.remove('error');
+		const options = select.querySelectorAll('._option');
 
-		this.setName($select,name);
-		this.setSelectedValue($select,selectedValue);
+		for (let i = 0; i < options.length; i++)
+			options[i].classList.remove('g-select__item--active');
+
+		instance.classList.add('g-select__item--active');
+		const name = instance.innerText;
+		const selectedValue = instance.dataset.value;
+
+		this.setName(select,name);
+		this.setSelectedValue(select,selectedValue);
 		this.close();
 	}
 };
