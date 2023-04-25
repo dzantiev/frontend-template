@@ -2,19 +2,19 @@ o2.notification =
 {
 	send()
 	{
-		$('.g-alert').addClass('success');
-		$('.g-alert__text').addClass('success__text')
+		document.querySelector('.g-alert').classList.add('success');
+		document.querySelector('.g-alert__text').classList.add('success__text');
 	},
 	close()
 	{
-		$('.g-alert').removeClass('success');
-		$('.g-alert').removeClass('error');
-		$('.g-alert__text').removeClass('success__text')
-		$('.g-alert__text').removeClass('error__text')
+		document.querySelector('.g-alert').classList.remove('success');
+		document.querySelector('.g-alert').classList.remove('error');
+		document.querySelector('.g-alert__text').classList.remove('success__text');
+		document.querySelector('.g-alert__text').classList.remove('error__text');
 	},
 	error()
 	{
-		$('.g-alert').addClass('error');
-		$('.g-alert__text').addClass('error__text')
+		document.querySelector('.g-alert').classList.add('error');
+		document.querySelector('.g-alert__text').classList.add('error__text');
 	}
-}
+};
