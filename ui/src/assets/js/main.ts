@@ -32,6 +32,7 @@ import '@b/notification/notification.js';
 import '@b/g-popup/g-popup.js';
 import '@b/g-masked-input/g-masked-input.js';
 import '@b/g-yamap/g-yamap.js';
+import '@b/g-input-file/g-input-file.js';
 
 /* ====================#1ef Blocks #1ef==================== */
 
