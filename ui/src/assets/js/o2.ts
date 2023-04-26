@@ -16,6 +16,7 @@ window.o2 =
 	 */
 	init(): void
 	{
+		this.innputMask.init();
 	},
 	/**
 	* отслеживание клика вне блока

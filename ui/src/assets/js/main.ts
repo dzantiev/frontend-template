@@ -30,6 +30,8 @@ import '@b/g-select/g-select.js';
 import '@b/g-tabs/g-tabs.js';
 import '@b/notification/notification.js';
 import '@b/g-popup/g-popup.js';
+import '@b/g-masked-input/g-masked-input.js';
+
 
 /* ====================#1ef Blocks #1ef==================== */
 
