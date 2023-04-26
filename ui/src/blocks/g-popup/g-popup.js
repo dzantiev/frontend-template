@@ -4,38 +4,41 @@ o2.gPopup =
 	open(contentClass)
 	{
 		this.removeListner();
-		let popupHtml = $(`.${contentClass}`).html();
-		$('._overlay').addClass('open').html(popupHtml);
-		$('body').css({overflow:'hidden'});
+		this.close();
+		const popupHtml = document.querySelector(`.${contentClass}`);
+		const overlay = document.querySelector('._overlay');
+		overlay.classList.add('open');
+		overlay.insertAdjacentHTML('afterbegin', popupHtml.innerHTML);
+		document.body.style.overflow = 'hidden';
 		this.setEscEvent();
-		console.log(popupHtml)
-
-		let $popup = $('._overlay').find('._popup-content')
-		let self = this;
+		const popup = overlay.querySelector('._popup-content');
+		const self = this;
 		setTimeout(function()
 		{
-			self.outListener = o2.clickOutside($popup, () => {
+			self.outListener = o2.clickOutside(popup, () =>
+			{
 				self.close();
 			});
 		},10);
 	},
 	close()
 	{
-		$('._overlay').removeClass('open');
-		$('body').css({overflow:'auto'});
+		document.querySelector('._overlay').classList.remove('open');
+		document.querySelector('._overlay').innerHTML = '';
+		document.body.style.overflow = 'auto';
 		this.removeListner();
 	},
 	removeListner()
 	{
 		if(this.outListener)
 			document.removeEventListener('click', this.outListener);
-		this.outListener = false
+		this.outListener = false;
 	},
 	escEvent:false,
 	setEscEvent()
 	{
 		if(this.escEvent) return false;
-		let self = this;
+		const self = this;
 		document.onkeydown = function(evt)
 		{
 			evt = evt || window.event;
@@ -44,4 +47,4 @@ o2.gPopup =
 		};
 		this.escEvent = true;
 	},
-}
+};

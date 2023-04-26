@@ -29,6 +29,7 @@ import '@a/js/slick.min.js';
 import '@b/g-select/g-select.js';
 import '@b/g-tabs/g-tabs.js';
 import '@b/notification/notification.js';
+import '@b/g-popup/g-popup.js';
 
 /* ====================#1ef Blocks #1ef==================== */
 
