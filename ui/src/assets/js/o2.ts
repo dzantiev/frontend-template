@@ -17,6 +17,7 @@ window.o2 =
 	init(): void
 	{
 		this.innputMask.init();
+		this.gYamap.init();
 	},
 	/**
 	* отслеживание клика вне блока

@@ -24,4 +24,7 @@
 	{% include '@blocks/footer/footer.twig' %}
 	{% include '@blocks/g-popup/g-popup.twig' %}
 </body>
+{% for script in scripts %}
+	<script src="{{ script }}" type="text/javascript" defer></script>
+{% endfor %}
 </html>
