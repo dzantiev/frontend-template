@@ -2,28 +2,32 @@ o2.gInputFile =
 {
 	fileSelection()
 	{
-		$(".g-input-file__file-inp").on('change',(event)=>
+
+		inputFile = document.querySelector(".g-input-file__file-inp");
+		inputFile.addEventListener('change', (event)=>
 		{
-			let fileList = event.target.files;
+			const fileList = event.target.files;
 			for (i = 0; i < fileList.length; i++)
 			{
-				var reader = new FileReader();
+				const reader = new FileReader();
 				if(fileList[i].type === "image/png" || fileList[i].type === "image/jpg" || fileList[i].type === "image/jpeg")
 				{
 					reader.onload = function(event)
 					{
-						$('<div class = "g-input-file__img"><img class = "g-input-file__img-close" src = "/src/assets/svg/close.svg" onclick = "o2.gInputFile.close(this)"><img class = "g-input-file__img-image" src = "'+event.target.result+'"></div>').appendTo($('.g-input-file__gallery'));
+						document.querySelector('.g-input-file__gallery').insertAdjacentHTML('afterbegin', '<div class = "g-input-file__img"><img class = "g-input-file__img-close" src = "../svg/close.svg" onclick = "o2.gInputFile.close(this)"><img class = "g-input-file__img-image" src = "'+event.target.result+'"></div>');
 					};
 				}
 				else
-					$('<div class = "g-input-file__img"><img class = "g-input-file__img-close" src = "/src/assets/svg/close.svg" onclick = "o2.gInputFile.close(this)"><img class = "g-input-file__img-image" src = "/src/assets/svg/close.svg"></div>').appendTo($('.g-input-file__gallery'));
+				{
+					document.querySelector('.g-input-file__gallery').insertAdjacentHTML('afterbegin', '<div class = "g-input-file__img"><img class = "g-input-file__img-close" src = "../svg/close.svg" onclick = "o2.gInputFile.close(this)"><img class = "g-input-file__img-image" src = "../svg/close.svg"></div>');
+				}
 				reader.readAsDataURL(fileList.item(i));
 			}
 		});
 	},
 	close(instance)
 	{
-		let touch = $(instance).parents('.g-input-file__img');
+		const touch = instance.closest('.g-input-file__img');
 		touch.remove();
 	}
 };
