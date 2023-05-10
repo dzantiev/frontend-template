@@ -63,7 +63,10 @@
 .g-spoiler__list
 {
 	padding: 0 15px;
-	display: none;
+	// display: none;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .3s ease;
 }
 
 .g-spoiler__list-item

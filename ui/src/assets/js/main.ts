@@ -33,6 +33,8 @@ import '@b/g-popup/g-popup.js';
 import '@b/g-masked-input/g-masked-input.js';
 import '@b/g-yamap/g-yamap.js';
 import '@b/g-input-file/g-input-file.js';
+import '@b/g-range-slider/g-range-slider.js';
+import '@b/g-spoiler/g-spoiler.js';
 
 /* ====================#1ef Blocks #1ef==================== */
 

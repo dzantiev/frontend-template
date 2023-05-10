@@ -18,6 +18,7 @@ window.o2 =
 	{
 		this.innputMask.init();
 		this.gYamap.init();
+		// this.gRangeSlider.init();
 	},
 	/**
 	* отслеживание клика вне блока
