@@ -1,4 +1,6 @@
-@import './vendors/no-ui-slider';
+@import 'nouislider/dist/nouislider.min.css';
+// @import './vendors/no-ui-slider.scss';
+
 .g-range-slider
 {
 	min-height: 1px;
@@ -36,7 +38,7 @@
 			background-color: #7C7791;
 			box-shadow: none;
 			position: relative;
-			left:-10px;
+			left: 255px;
 			&:before, &:after {display: none; }
 		}
 		.noUi-connects

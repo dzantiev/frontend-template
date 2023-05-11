@@ -1,4 +1,4 @@
-import './vendors/no-ui-slider.min.js';
+import noUiSlider from 'nouislider';
 
 o2.gRangeSlider =
 {
