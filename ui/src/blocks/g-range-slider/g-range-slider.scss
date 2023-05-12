@@ -11,8 +11,8 @@
 	display: flex;
 	justify-content: space-between;
 	padding-top: 7px;
-	font-size: rem(9);
-	line-height: rem(12);
+	font-size: 0.69231rem;
+	line-height: 0.92308rem;
 	font-weight: $regular;
 	color: #959dab;
 }
@@ -54,8 +54,8 @@
 			bottom: -30px;
 			background: #f0f1f3;
 			border-radius: 2px;
-			font-size: rem(9);
-			line-height: rem(12);
+			font-size: 0.69231rem;
+			line-height: 0.92308rem;
 			color: #677387;
 			border: none;
 			&::after
