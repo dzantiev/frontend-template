@@ -15,7 +15,8 @@ o2.gRangeSlider =
 			if (typeof start === 'string')
 			{
 				start = start.split(',');
-				connect = true;
+				if(start.length > 1)
+					connect = true;
 			}
 
 			const slider = noUiSlider.create(element,{
