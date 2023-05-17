@@ -1,18 +1,20 @@
-<div class="g-slider">
+{# <div class="g-slider">
 	{% for i in 0..9 %}
 	<div class="g-slider__item-wr">
 		<div class="g-slider__item"></div>
 	</div>
 	{% endfor %}
-</div>
+</div> #}
 
-{# <div class="swiper">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">Slide 1</div>
-		<div class="swiper-slide">Slide 2</div>
-		<div class="swiper-slide">Slide 3</div>
+<div class="g-slider">
+	<div class="g-slider__wr swiper">
+		<div class="g-slider__item-wr swiper-wrapper">
+			{% for i in 0..9 %}
+				<div class="g-slider__item swiper-slide"></div>
+			{% endfor %}
+		</div>
 	</div>
 
 	<div class="swiper-button-prev"></div>
 	<div class="swiper-button-next"></div>
-</div> #}
+</div>
