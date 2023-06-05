@@ -56,7 +56,7 @@ o2.uiKit =
 	],
 	init()
 	{
-		PR.prettyPrint();
+		// PR.prettyPrint();
 		this.renderComponentsList();
 	},
 	getComponents()

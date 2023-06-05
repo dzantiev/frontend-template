@@ -16,6 +16,7 @@ window.o2 =
 	 */
 	init(): void
 	{
+		this.uiKit.init();
 		this.innputMask.init();
 		this.gYamap.init();
 		this.gRangeSlider.init();

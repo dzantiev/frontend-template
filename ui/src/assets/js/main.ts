@@ -44,6 +44,7 @@ import '@b/g-spoiler/g-spoiler.js';
 /* ====================#fff Pages #fff ==================== */
 
 import '@p/form/form.js';
+import '@p/ui-kit/ui-kit.js';
 
 /* ====================#fff Pages #fff==================== */
 
