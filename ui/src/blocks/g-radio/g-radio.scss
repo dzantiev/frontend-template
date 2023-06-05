@@ -3,6 +3,7 @@
 	position: relative;
 	font-size: 0;
 	display: inline-block;
+	margin-right: 5px;
 }
 .g-radio__input
 {
@@ -50,7 +51,7 @@
 			border-color: rgba(25, 28, 33, 0.7);
 			border-width: 2px;
 		}
-		&:checked 
+		&:checked
 		{
 			&~ .g-radio__body .g-radio__box:before
 			{
@@ -89,7 +90,7 @@
 }
 .g-radio__text
 {
-	font-size: rem(13);
+	font-size: 1rem;
 	display: inline-block;
 	vertical-align: top;
 	margin-left: 10px;

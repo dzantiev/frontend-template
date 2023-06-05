@@ -18,11 +18,15 @@
 		<div class="ui-kit__tabs-content" data-tab="1.3">
 			<pre class="prettyprint lang-html ui-kit__pretty">
 &lt;div class=&quot;g-slider&quot;&gt;
-	{{ '{% for i in 0..9 %}' }}
-	&lt;div class=&quot;g-slider__item-wr&quot;&gt;
-		&lt;div class=&quot;g-slider__item&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;g-slider__wr swiper&quot;&gt;
+		&lt;div class=&quot;g-slider__item-wr swiper-wrapper&quot;&gt;
+			{{ '{% for i in 0..9 %}' }}
+				&lt;div class=&quot;g-slider__item swiper-slide&quot;&gt;&lt;/div&gt;
+			{{ '{% endfor %}' }}
+		&lt;/div&gt;
 	&lt;/div&gt;
-	{{ '{% endfor %}' }}
+	&lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 			</pre>
 		</div>
